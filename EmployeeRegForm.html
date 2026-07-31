@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1> Employee Registration Form</h1>
+    <form action="Welcome.html" novalidate autocomplete="off" method="get">
+        <fieldset>
+            <legend><b>Personal Details</b></legend>
+            <label>Full Name:</label>
+            <input type="text" required/>
+        </br>
+        <br/>
+
+        <label>Age: </label>
+            <input type="nukmber" required/>
+        </br>
+        <br/>
+
+        <label>Date Of Birth: </label>
+            <input type="date"/>
+        </br>
+        <br/>
+
+        <label>Email: </label>
+            <input type="email" required/>
+        </br>
+        <br/>
+
+        <label>Phone Number:</label>
+            <input type="tel" required/>
+        </br>
+        <br/>
+
+        <label>Gender: </label>
+            <input type="radio"/><label>Male</label>
+            <input type="radio"/><label>Female</label>        
+        </br>
+        <br/>
+
+        <label>City: </label>
+        <input type="text" required/>
+        </br>
+        <br/>
+
+        <label>Country: </label>
+        <input type="text" required/>
+        </br>
+        <br/>
+        </fieldset>
+
+        <fieldset>
+            <legend><b>Employement Details</b></legend>
+            <label>Employee ID: </label>
+        <input type="number" required/>
+        </br>
+        <br/>
+
+        <label>Department: </label>
+        <input list="Department" required/>
+        <datalist id="Department">
+            <option>Human Resource(HR)</option>
+            <option>Information Technology(IT)</option>
+            <option>Finance</option>
+            <option>Marketing</option>
+            <option>Sales</option>
+            <option>Operations</option>
+            <option>Customer Support</option>
+        </datalist>
+        </br>
+        <br/>
+
+        <label>Designation(Job title): </label>
+        <input type="text" required/>
+        </br>
+        <br/>
+
+        <label>Date Of Joining: </label>
+        <input type="date"/>
+        </br>
+        <br/>
+
+        <label>Employement Type: </label>
+        <input list="Type" required/>
+        <datalist id="Type">
+            <option>Full-Time</option>
+            <option>Part-Time</option>
+            <option>Intern</option>
+            <option>Contarct</option>
+        </datalist>
+        </br>
+        <br/>
+
+        <label>Salary: </label>
+        <input type="number"/>
+        </br>
+        <br/>
+        </fieldset>
+
+        <fieldset>
+            <legend><b>Qualification</b></legend>
+            <label>Highest Qualification: </label>
+        <input type="text"/>
+        </br>
+        <br>
+
+        <label>College/University: </label>
+        <input type="text"/>
+        </br>
+        <br/>
+
+        <label>Graduation Year: </label>
+        <input type="number"/>
+        </br>
+        <br/>
+
+        <label>Percentage/CGPA: </label>
+        <input type="number"/>
+        </br>
+        <br/>
+        </fieldset>
+
+        <fieldset>
+            <legend><b>Professional Details</b></legend>
+            <label>Years Of Experience: </label>
+            <input type="number" required/>
+        </br>
+        <br/>
+
+        <label>Previous Company: </label>
+            <input type="text" required/>
+        </br>
+        <br/>
+    </fieldset>
+
+    <fieldset>
+        <legend><b>Account Details</b></legend>
+         <label>Bank Name: </label>
+            <input type="text"/>
+        </br>
+        <br/>
+
+         <label>Account Number: </label>
+            <input type="number" required/>
+        </br>
+        <br/>
+
+         <label>IFSC Code: </label>
+            <input type="text" required/>
+        </br>
+        <br/>
+    </fieldset>
+
+    <fieldset>
+        <legend><b>Uplodation</b></legend>
+        <label>Upload Photo: </label>
+            <input type="file" required/>
+        </br>
+        <br/>
+
+        <label>Upload Resume: </label>
+            <input type="file" required/>
+        </br>
+        <br/>
+
+        <label>Upload Id Proof: </label>
+            <input type="file" required/>
+        </br>
+        <br/>
+
+        <label>Agree To Terms & Condition: </label>
+            <input type="Checkbox"/><label>I Agree</label>
+        </br>
+        <br/>
+    </fieldset>
+         
+    <br/>
+        <input type="submit" value="Submit Now">
+        <br/>
+        </br>
+
+        <input type="reset">
+        </br>
+        <br/>
+ 
+
+
+
+
+
+    </form>
+    
+</body>
+</html>
