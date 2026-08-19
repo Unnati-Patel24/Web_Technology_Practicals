@@ -1,0 +1,88 @@
+body{
+    margin: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: gainsboro;
+}
+
+header{
+    background: #002b5c;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.logo{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.top-nav a{
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+    background-color:rgb(25, 92, 143);
+    padding: 10px;
+    box-shadow: 2px 2px 2px rgb(139, 133, 133);
+}
+
+.container{
+    display: flex;
+}
+
+.sidebar{
+    width: 200px;
+    min-height: calc(100vh-50px);
+    background:rgb(25, 92, 143);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.sidebar a:hover{
+    background: rgb(97, 134, 179);
+}
+
+.sidebar a{
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+    background-color: #002b5c;
+    padding: 10px;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.content{
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card{
+    background: rgba(255, 255, 255, 0.943);
+    border-radius: 10%;
+    box-shadow: 2px 2px 6px rgb(0,0,0);
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+}
+
+.card img{
+    width: 100%;
+    border-radius: 100%;
+}
+
+footer{
+    text-align: center;
+    background: #002b5c;
+    color: white;
+    padding: 10px 0;
+}
