@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Parent</title>
+    <style>
+        .box{
+            background-color: palevioletred;
+            border: 4px solid darkolivegreen;
+            margin: 10px;
+            text-align: center;
+        }
+        .container{
+            height: 300px;
+            width: 200px;
+            background-color: cadetblue;
+            display:flex ;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            align-items:flex-start;
+            align-content: space-evenly;
+            flex-flow: row wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Box1</div>
+        <div class="box">Box2</div>
+        <div class="box">Box3</div>
+        <div class="box">Box4</div>
+        <div class="box">Box5</div>
+        <div class="box">Box6</div>
+        <div class="box">Box7</div>
+        <div class="box">Box8</div>
+    </div>
+    
+</body>
+</html>

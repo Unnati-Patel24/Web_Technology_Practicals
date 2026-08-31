@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gallery{
+            display: flex;
+            justify-content: right;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .photo img{
+            height: 100px;
+            width: 100px;
+            background-color: rgb(77, 37, 114);
+        }
+
+        .photo img:hover{
+            transform: scale(1.05);
+            background: rgb(157, 124, 193);
+        }
+
+        .photo{
+            width:30%;
+        }
+
+        @media (max-width:700px){
+            .photo{
+                width:50%;
+            }
+        }
+
+        @media (max-width:400px){
+            .photo{
+                width:70%;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    
+ <h2>Photo Gallery</h2>
+  <div class="gallery">
+
+        <div class="photo"><img src="butterfly_3.png" alt="Photo 1"></div>
+        <div class="photo"><img src="butterfly_3.png" alt="Photo 2"></div>
+        <div class="photo"><img src="butterfly_3.png" alt="Photo 3"></div>
+        <div class="photo"><img src="butterfly_3.png" alt="Photo 4"></div>
+        <div class="photo"><img src="butterfly_3.png" alt="Photo 5"></div>
+        <div class="photo"><img src="butterfly_3.png" alt="Photo 6"></div>
+        <div class="photo"><img src="butterfly_3.png" alt="Photo 7"></div>
+        <div class="photo"><img src="butterfly_3.png" alt="Photo 8"></div>
+
+    </div>
+    </body>
+</html>
