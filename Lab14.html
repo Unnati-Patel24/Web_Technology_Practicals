@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Harry Potter Quiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #10182b;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .quiz-box {
+      background: #f5e6c8;
+      max-width: 450px;
+      margin: auto;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px #000;
+    }
+
+    h1 {
+      color: #4b287d;
+    }
+
+    h3 {
+      color: #25213b;
+    }
+
+    #progress {
+      color: #70533b;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+      background: #6842a6;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #482776;
+    }
+
+    #next {
+      background: #d4a72c;
+      color: #20172d;
+    }
+
+    #next:hover {
+      background: #b88b16;
+    }
+
+    #feedback {
+      font-weight: bold;
+    }
+
+    #result {
+      color: #4b287d;
+    }
+  </style>
+</head>
+<body>
+
+<div class="quiz-box">
+  <h1>Harry Potter Quiz</h1>
+  <p id="progress"></p>
+  <h3 id="question"></h3>
+  <div id="options"></div>
+  <p id="feedback"></p>
+  <button id="next" onclick="nextQuestion()"
+   style="display:none;">Next Question</button>
+  <h3 id="result"></h3>
+  <button id="restart" onclick="restartQuiz()"
+   style="display:none;">Restart Quiz</button>
+</div>
+
+<script>
+  const quiz = [
+    {
+      question: "1. What is the name of Harry Potter's school?",
+      options: ["Beauxbatons", "Hogwarts", "Durmstrang", "Ilvermorny"],
+      answer: "Hogwarts"
+    },
+    {
+      question: "2. Which house does Harry Potter belong to?",
+      options: ["Slytherin", "Hufflepuff", "Gryffindor", "Ravenclaw"],
+      answer: "Gryffindor"
+    },
+    {
+      question: "3. Who is Harry Potter's owl?",
+      options: ["Crookshanks", "Hedwig", "Scabbers", "Fawkes"],
+      answer: "Hedwig"
+    },
+    {
+      question: "4. What position does Harry play in Quidditch?",
+      options: ["Keeper", "Beater", "Chaser", "Seeker"],
+      answer: "Seeker"
+    },
+    {
+      question: "5. Which spell is commonly used to disarm an opponent?",
+      options: ["Lumos", "Expelliarmus", "Alohomora", "Accio"],
+      answer: "Expelliarmus"
+    }
+  ];
+
+  let current = 0;
+  let score = 0;
+  let answered = false;
+
+  function loadQuestion() {
+    answered = false;
+    document.getElementById("progress").textContent =
+      "Question " + (current + 1) + " of " + quiz.length;
+
+    document.getElementById("question").textContent =
+      quiz[current].question;
+
+    document.getElementById("feedback").textContent = "";
+    document.getElementById("next").style.display = "none";
+
+    const optionsDiv = document.getElementById("options");
+    optionsDiv.innerHTML = "";
+
+    quiz[current].options.forEach(function(option) {
+      const btn = document.createElement("button");
+      btn.textContent = option;
+      btn.onclick = function() {
+        checkAnswer(option, btn);
+      };
+      optionsDiv.appendChild(btn);
+    });
+  }
+
+  function checkAnswer(option, btn) {
+    if (answered) return;
+    answered = true;
+
+    if (option === quiz[current].answer) {
+      score++;
+      document.getElementById("feedback").textContent =
+        "Correct Answer!";
+    } else {
+      document.getElementById("feedback").textContent =
+        "Wrong! Correct answer: " + quiz[current].answer;
+    }
+
+    document.querySelectorAll("#options button").forEach(function(b) {
+      b.disabled = true;
+    });
+
+    document.getElementById("next").style.display = "block";
+  }
+
+  function nextQuestion() {
+    current++;
+
+    if (current < quiz.length) {
+      loadQuestion();
+    } else {
+      showResult();
+    }
+  }
+
+  function showResult() {
+    document.getElementById("progress").textContent = "Quiz Completed!";
+    document.getElementById("question").textContent = "";
+    document.getElementById("options").innerHTML = "";
+    document.getElementById("feedback").textContent = "";
+    document.getElementById("next").style.display = "none";
+
+    document.getElementById("result").textContent =
+      "Your Score: " + score + " / " + quiz.length +
+      " (" + Math.round(score / quiz.length * 100) + "%)";
+
+    document.getElementById("restart").style.display = "block";
+  }
+
+  function restartQuiz() {
+    current = 0;
+    score = 0;
+    document.getElementById("result").textContent = "";
+    document.getElementById("restart").style.display = "none";
+    loadQuestion();
+  }
+
+  loadQuestion();
+</script>
+
+</body>
+</html>
